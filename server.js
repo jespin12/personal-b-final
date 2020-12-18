@@ -1,4 +1,4 @@
-const { constant } = require('async');
+const { constant } = require('async');666
 const express = require('express');
 const app = express();
 const User = require('./models/user');
@@ -36,7 +36,7 @@ const requireLogin = (req, res, next) => {
 }
 
 app.get('/', (req, res) => {
-    res.redirect("/secret")
+    res.redirect("/index")
 })
 
 app.get('/register', (req, res) => {
@@ -78,9 +78,9 @@ app.post('/logout', (req,res) => {
     res.redirect('/login');
 })
 
-app.get('/secret', requireLogin, (req, res) => {
+app.get('/logout', requireLogin, (req, res) => {
     
-        res.render('secret')
+        res.render('logout')
     })
 
     app.get('/index', requireLogin, (req, res) => {
@@ -95,11 +95,14 @@ app.get('/secret', requireLogin, (req, res) => {
               .then((data)=> {
                 res.json(data)
                 mongoose.connection.close();
+                
               })
               .catch((connectionError)=> {
                 console.log(connectionError);
               });
+              
           });
+          
       });
       
       app.post('/budgetItemsAdd', (req, res) => {
@@ -119,6 +122,7 @@ app.get('/secret', requireLogin, (req, res) => {
             .catch((connectionError)=> {
               console.log(connectionError)
             });
+            res.redirect("/index")
          })
             .catch((connectionError)=>{
               console.log(connectionError)
