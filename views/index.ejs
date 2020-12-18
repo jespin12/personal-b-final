@@ -15,9 +15,7 @@
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="https://google.com">Google</a></li>
+                <li><a href="logout" >Logout</a></li>
             </ul>
         </nav>
     </div>
@@ -30,96 +28,32 @@
     <div class="container center">
 
         <div class="page-area">
+    
+            
 
-            <div class="text-box">
-                <!-- This is a Semantic HTML Change added section tag-->
-                <section>
-                <h1>Stay on track</h1>
-                <!-- This is an SEO Change title tag was added-->
-                <p title="How to track your money!">
-                    Do you know where you are spending your money? If you really stop to track it down,
-                    you would get surprised! Proper budget management depends on real data... and this
-                    app will help you with that!
-                </p>
-                </section>
-            </div>
+            <form action="/budgetItemsAdd"  method="POST">
+                <div>
+                    <label for="color">Enter color:</label>
+                    <input type="text" name="color" id="color" placeholder="Color">
+                
+                    <label for="title">Enter Title:</label>
+                    <input type="text" name="title" id="title" placeholder="Title">
+                
+                    <label for="budget">Enter Budget:</label>
+                    <input type="text" name="budget" id="budget" placeholder="Budget">
+                </div>
+                <button>Submit</button>
+            </form>
+
+            <div>
+                <label for="colorpicker">Color Picker:</label>
+                <input type="color" id="colorpicker" value="#0000ff"> 
+            </div>   
     
             <div class="text-box">
                 <!-- This is a Semantic HTML Change added section tag-->
                 <section>
-                <h1>Alerts</h1>
-                <!-- This is an SEO Change title tag was added-->
-                <p title="Alerts when funds are low">
-                    What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
-                </p>
-                </section>
-            </div>
-    
-            <div class="text-box">
-                <!-- This is a Semantic HTML Change added section tag-->
-                <section>
-                <h1>Results</h1>
-                <!-- This is an SEO Change title tag was added-->
-                <p title="Get out of debt">
-                    People who stick to a financial plan, budgeting every expense, get out of debt faster!
-                    Also, they to live happier lives... since they expend without guilt or fear... 
-                    because they know it is all good and accounted for.
-                </p>
-                </section>
-            </div>
-    
-            <div class="text-box">
-                <!-- This is a Semantic HTML Change added section tag-->
-                <section>
-                <h1>Free</h1>
-                <!-- This is an SEO Change title tag was added-->
-                <p title="Budget your spending for free">
-                    This app is free!!! And you are the only one holding your data!
-                </p>
-                </section>
-            </div>
-    
-            <div class="text-box">
-                <!-- This is a Semantic HTML Change added section tag-->
-                <section>
-                <h1>Stay on track</h1>
-                <!-- This is an SEO Change title tag was added-->
-                <p title="How to track your money!">
-                    Do you know where you are spending your money? If you really stop to track it down,
-                    you would get surprised! Proper budget management depends on real data... and this
-                    app will help you with that!
-                </p>
-                </section>
-            </div>
-    
-            <div class="text-box">
-                <!-- This is a Semantic HTML Change added section tag-->
-                <section>
-                <h1>Alerts</h1>
-                <!-- This is an SEO Change title tag was added-->
-                <p title="Alerts when funds are low">
-                    What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
-                </p>
-                </section>
-            </div>
-    
-            <div class="text-box">
-                <!-- This is a Semantic HTML Change added section tag-->
-                <section>
-                <h1>Results</h1>
-                <!-- This is an SEO Change title tag was added-->
-                <p title="Get out of debt">
-                    People who stick to a financial plan, budgeting every expense, get out of debt faster!
-                    Also, they to live happier lives... since they expend without guilt or fear... 
-                    because they know it is all good and accounted for.
-                </p>
-                </section>
-            </div>
-    
-            <div class="text-box">
-                <!-- This is a Semantic HTML Change added section tag-->
-                <section>
-                <h1>Chart</h1>
+                <h1 style="align-items: center;">Pie Chart</h1>
                 <!-- This is an SEO Change title tag was added-->
                 <p title="Budget your spending for free">
                     <canvas id="myChart" width="400" height="400"></canvas>
@@ -130,7 +64,7 @@
             <div class="text-box">
                 <!-- This is a Semantic HTML Change added section tag-->
                 <section>
-                <h1>Chart</h1>
+                <h1>Bar Chart</h1>
                 <!-- This is an SEO Change title tag was added-->
                 <p title="Budget your spending for free">
                     <canvas id="myChart1" width="400" height="400"></canvas>
@@ -138,30 +72,20 @@
                 </section>
             </div>
 
+            <div class="text-box">
+                <!-- This is a Semantic HTML Change added section tag-->
+                <section>
+                <h1>Line Chart</h1>
+                <!-- This is an SEO Change title tag was added-->
+                <p title="Budget your spending for free">
+                    <canvas id="myChart2" width="400" height="400"></canvas>
+                </p>
+                </section>
+            </div>
+
         </div>
 
     </div>
-
-    <form action="/budgetItemsAdd"  method="POST">
-        <div>
-            <label for="color">enter color:</label>
-            <input type="text" name="color" id="color" placeholder="Color">
-        </div>
-
-        <div>
-            <label for="title">Enter Title:</label>
-            <input type="text" name="title" id="title" placeholder="Title">
-        </div>
-
-        <div>
-            <label for="budget">Enter Budget:</label>
-            <input type="text" name="budget" id="budget" placeholder="Budget">
-        </div>
-        <button>Submit</button>
-    </form>
-
-
-
 
     <div class="bottom">
         <div class="center">
@@ -225,7 +149,21 @@
                 var ctx1 = document.getElementById("myChart1").getContext("2d");
                 var myBarChart = new Chart(ctx1, {
                     type: 'bar',
-                    data: dataSource
+                    data: dataSource,
+                            options: {
+                                scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    },
+                            legend: {
+                            display: false,
+            
+                                }
+                            
                 });
             }
     
@@ -244,5 +182,58 @@
             //createChart();
             getBudget();
         </script>
+
+        
+                <script>
+                    var dataSource = {
+                        datasets: [
+                            {
+                                data: [],
+                                backgroundColor: [
+            
+                                ],
+                            }
+                        ],
+                        labels: []
+                    };
+            
+                    function createChart2() {
+                        var ctx2 = document.getElementById("myChart2").getContext("2d");
+                        var myLineChart = new Chart(ctx2, {
+                            type: 'line',
+                            data: dataSource,
+                            options: {
+                                scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    },
+                                legend: {
+                                display: false,
+            
+                                    }
+                                
+
+                        });
+                    }
+            
+                    function getBudget() {
+                        axios.get('/budgetItem')
+                        .then(function (res) {
+                            console.log(res);
+                            for( var i = 0; i < res.data.length; i++) {
+                                dataSource.labels[i] = res.data[i].title;
+                                dataSource.datasets[0].data[i] = res.data[i].budget;
+                                dataSource.datasets[0].backgroundColor[i] = res.data[i].color;
+                            }
+                            createChart2();
+                        });
+                    }
+                    //createChart();
+                    getBudget();
+                </script>
 </body>
 </html>
