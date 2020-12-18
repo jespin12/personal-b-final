@@ -34,7 +34,7 @@
             <form action="/budgetItemsAdd"  method="POST">
                 <div>
                     <label for="color">Enter color:</label>
-                    <input type="text" name="color" id="color" placeholder="Color">
+                    <input type="text" name="color" id="color" placeholder="Hex Color">
                 
                     <label for="title">Enter Title:</label>
                     <input type="text" name="title" id="title" placeholder="Title">
@@ -42,6 +42,7 @@
                     <label for="budget">Enter Budget:</label>
                     <input type="text" name="budget" id="budget" placeholder="Budget">
                 </div>
+                <p>Click on color picker to choose a hex color. User up and down arrow on color picker to show hex color value </p>
                 <button>Submit</button>
             </form>
 
@@ -157,12 +158,12 @@
                     beginAtZero: true
                 }
             }]
-        }
-    },
-                            legend: {
+        },
+        legend: {
                             display: false,
             
                                 }
+    }
                             
                 });
             }
@@ -209,12 +210,12 @@
                     beginAtZero: true
                 }
             }]
-        }
-    },
-                                legend: {
+        },
+        legend: {
                                 display: false,
             
                                     }
+    }
                                 
 
                         });
