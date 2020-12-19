@@ -129,6 +129,6 @@ app.get('/logout', requireLogin, (req, res) => {
             });
       });
 
-app.listen(4000, () => {
+app.listen(8080, () => {
     console.log("SERVING YOUR APP!")
 })
