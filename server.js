@@ -7,9 +7,9 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 const cors = require('cors');
-const url = 'mongodb://localhost:27017/final_project';
+const url = 'mongodb+srv://jespin12:Soccer234!@cluster0.rxi0s.mongodb.net/final_project?retryWrites=true&w=majority';
 
-mongoose.connect('mongodb://localhost:27017/final_project', { useNewUrlParser: true,
+mongoose.connect('mongodb+srv://jespin12:Soccer234!@cluster0.rxi0s.mongodb.net/final_project?retryWrites=true&w=majority', { useNewUrlParser: true,
 useUnifiedTopology: true,
 useCreateIndex: true })
 .then(() => {
